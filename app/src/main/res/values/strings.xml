@@ -14,4 +14,9 @@
     <string name="form_confirm_password_helper">Re-enter password&#8230;</string>
     <string name="form_address">Address</string>
     <string name="form_address_helper">Enter address&#8230;</string>
+    <string name="string_rent">Rent</string>
+    <string name="string_electricity">Electricity</string>
+    <string name="string_water">Water</string>
+    <string name="string_home">Home</string>
+    <string name="string_payable">Payable</string>
 </resources>
