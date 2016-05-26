@@ -1,14 +1,17 @@
 package com.example.cmsc191.projectupa;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
     UserDatabaseAdapter registrationAdapter;
+    TextView loginLink;
     EditText regFullname, regUsername, regPassword,
             regConfirmPassword, regAddress;
     Button btnRegister;
@@ -26,6 +29,14 @@ public class RegisterActivity extends AppCompatActivity {
         regPassword = (EditText) findViewById(R.id.register_password_edittext);
         regConfirmPassword = (EditText) findViewById(R.id.register_confirm_password_edittext);
         regAddress = (EditText) findViewById(R.id.register_address_edittext);
+
+        loginLink = (TextView) this.findViewById(R.id.link_login_textview);
+        loginLink.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnRegister = (Button) findViewById(R.id.btn_register);
         btnRegister.setOnClickListener(new View.OnClickListener() {

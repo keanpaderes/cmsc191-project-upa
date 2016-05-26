@@ -34,7 +34,12 @@ public class MainActivity extends AppCompatActivity {
          * This will redirect user to LoginActivity is he is not
          * logged in
          * */
-        session.checkLogin();
+        if(!session.isLoggedIn()){
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        };
 
         // get user data from session
         HashMap<String, String> user = session.getUserDetails();

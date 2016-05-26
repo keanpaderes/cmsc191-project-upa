@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">ProjectUpa</string>
     <string name="string_login">LOGIN</string>
+    <string name="string_login_link">Already have a username? Sign in here.</string>
     <string name="string_register">REGISTER</string>
+    <string name="string_register_link">Not registered? Sign up here.</string>
     <string name="form_fullname">Full Name</string>
     <string name="form_fullname_helper">Enter name&#8230;</string>
     <string name="form_username">Username</string>
