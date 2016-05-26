@@ -39,16 +39,23 @@ public class MainActivity extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
-        };
+        }
+
+        else{
+            Intent intent = new Intent(getApplicationContext(), UnitListActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
 
         // get user data from session
-        HashMap<String, String> user = session.getUserDetails();
-
-        // name
-        String name = user.get(SessionManager.KEY_NAME);
-
-        // displaying user data
-        lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
+//        HashMap<String, String> user = session.getUserDetails();
+//
+//        // name
+//        String name = user.get(SessionManager.KEY_NAME);
+//
+//        // displaying user data
+//        lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
 
         /**
          * Logout button click event

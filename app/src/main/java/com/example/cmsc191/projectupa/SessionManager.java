@@ -16,6 +16,8 @@ public class SessionManager {
     private static final String PREF_NAME = "LoginDeetz";
     private static final String IS_LOGIN = "IsLoggedIn";
     public static final String KEY_NAME = "name";
+    public static HashMap<String, String> user = new HashMap<String, String>();
+    public static String name;
 
     public SessionManager(Context context){
         this._context = context;
@@ -28,13 +30,13 @@ public class SessionManager {
         editor.putBoolean(IS_LOGIN, true);
         editor.putString(KEY_NAME, name);
         editor.commit();
+        this.name = name;
     }
 
     /**
      * Get stored session data
      * */
     public HashMap<String, String> getUserDetails(){
-        HashMap<String, String> user = new HashMap<String, String>();
         user.put(KEY_NAME, pref.getString(KEY_NAME, null));
         return user;
     }
@@ -58,5 +60,9 @@ public class SessionManager {
      * **/
     public boolean isLoggedIn(){
         return pref.getBoolean(IS_LOGIN, false);
+    }
+
+    public String getCurrentUser(){
+        return name;
     }
 }

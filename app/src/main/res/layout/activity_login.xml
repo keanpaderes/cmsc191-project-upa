@@ -56,7 +56,8 @@
             android:layout_height="wrap_content"
             android:text="@string/string_register_link"
             android:id="@+id/link_register_textview"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:clickable="true"/>
 
     </LinearLayout>
 </RelativeLayout>
