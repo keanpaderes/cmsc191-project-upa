@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/string_profile"
+            android:id="@+id/textView3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textSize="34sp"
+            android:paddingTop="19dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:text="@string/user_fullname"
+            android:layout_below="@+id/textView3"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_alignStart="@+id/textView3" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText"
+            android:layout_alignLeft="@+id/editText"
+            android:layout_alignStart="@+id/editText"
+            android:id="@+id/linearLayout4">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="339dp"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bday_label"
+                    android:id="@+id/bday_label"
+                    android:paddingTop="10dp"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/textView2"
+                    android:layout_weight="0.50"
+                    android:layout_width="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contactNum_label"
+                android:id="@+id/textView4"
+                android:layout_below="@+id/linearLayout4"
+                android:layout_alignLeft="@+id/linearLayout4"
+                android:layout_alignStart="@+id/linearLayout4"
+                android:paddingTop="10dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="H"
+            android:id="@+id/button"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:layout_marginLeft="-5dip"
+            android:layout_marginRight="-5dip"
+            android:layout_marginTop="-5dip"
+            android:layout_marginBottom="-5dip"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="PRO"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:layout_marginLeft="-5dip"
+            android:layout_marginRight="-5dip"
+            android:layout_marginTop="-5dip"
+            android:layout_marginBottom="-5dip"
+            android:backgroundTint="@color/abc_secondary_text_material_light" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="PAY"
+            android:id="@+id/button3"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:layout_marginLeft="-5dip"
+            android:layout_marginRight="-5dip"
+            android:layout_marginTop="-5dip"
+            android:layout_marginBottom="-5dip"/>
+
+    </LinearLayout>
+</LinearLayout>

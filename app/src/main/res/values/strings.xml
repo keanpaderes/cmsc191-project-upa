@@ -20,4 +20,8 @@
     <string name="string_home">Home</string>
     <string name="string_payable">Payable</string>
     <string name="title_option">Option</string>
+    <string name="string_profile">PROFILE</string>
+    <string name="user_fullname">Full Name</string>
+    <string name="bday_label">Birthday</string>
+    <string name="contactNum_label">Contact Number</string>
 </resources>

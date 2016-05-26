@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         session = new SessionManager(getApplicationContext());
-        TextView lblName = (TextView) findViewById(R.id.test_username_label);
-        TextView lblEmail = (TextView) findViewById(R.id.test_password_label);
 
         // Button logout
         btnLogout = (Button) findViewById(R.id.btn_logout);
