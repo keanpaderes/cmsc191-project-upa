@@ -71,11 +71,11 @@ public class LoginActivity extends AppCompatActivity {
                         session.createLoginSession(username);
 
                         // Staring MainActivity
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent i = new Intent(getApplicationContext(), UnitListActivity.class);
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(i);
-                        finish();
+                        //finish();
                     }
                 }
             }

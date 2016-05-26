@@ -14,6 +14,13 @@
     <string name="form_confirm_password_helper">Re-enter password&#8230;</string>
     <string name="form_address">Address</string>
     <string name="form_address_helper">Enter address&#8230;</string>
+    <string name="button_add_unit">Add New Unit</string>
+    <string name="form_unit_codename">Unit Code</string>
+    <string name="form_unit_tenants">Tenants</string>
+    <string name="form_unit_waterbill">Water Bill</string>
+    <string name="form_unit_electricbill">Electricity Bill</string>
+    <string name="form_unit_rent">Rent</string>
+    <string name="form_unit_submit">Submit</string>
     <string name="string_rent">Rent</string>
     <string name="string_electricity">Electricity</string>
     <string name="string_water">Water</string>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 /**
  * Created by Kean on 5/25/2016.
@@ -19,6 +20,17 @@ public class UserDatabaseAdapter {
             + "USERNAME text,"
             + "PASSWORD text,"
             + "ADDRESS text); ";
+
+    static final String DATABASE2_CREATE = "create table " + "UNIT( "
+            + "ID" + " integer primary key autoincrement,"
+            + "USERNAME text,"
+            + "CODENAME text,"
+            + "WATER_BILL real,"
+            + "ELECTRIC_BILL real,"
+            + "RENT real,"
+            + "TENANT text,"
+            + " FOREIGN KEY(USERNAME) REFERENCES LOGIN(USERNAME));";
+
     public SQLiteDatabase db;
     private final Context context;
     private DatabaseHelper dbHelper;
@@ -47,8 +59,21 @@ public class UserDatabaseAdapter {
         newValues.put("PASSWORD",password);
         newValues.put("ADDRESS", address);
         db.insert("LOGIN", null, newValues);
-        ///Toast.makeText(context, "Reminder Is Successfully Saved", Toast.LENGTH_LONG).show();
+        ///Toast.makeText(context, "Reminder Is Successfully Saved", Toast.LENGTH_LONG).show()
     }
+
+    public void insertUnitEntry(String username, String codename, Float waterBill, Float electricBill, Float rent, String tenant){
+        ContentValues newValues = new ContentValues();
+        newValues.put("USERNAME", username);
+        newValues.put("CODENAME", codename);
+        newValues.put("WATER_BILL", waterBill);
+        newValues.put("ELECTRIC_BILL", electricBill);
+        newValues.put("RENT", rent);
+        newValues.put("TENANT", tenant);
+        db.insert("UNIT", null, newValues);
+        Toast.makeText(context, "Unit " + codename + " successfully added!", Toast.LENGTH_LONG).show();
+    }
+
     public int deleteEntry(String username) {
         //String id=String.valueOf(ID);
         String where = "USERNAME=?";
