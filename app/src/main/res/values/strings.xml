@@ -21,4 +21,10 @@
     <string name="form_unit_electricbill">Electricity Bill</string>
     <string name="form_unit_rent">Rent</string>
     <string name="form_unit_submit">Submit</string>
+    <string name="string_rent">Rent</string>
+    <string name="string_electricity">Electricity</string>
+    <string name="string_water">Water</string>
+    <string name="string_home">Home</string>
+    <string name="string_payable">Payable</string>
+    <string name="title_option">Option</string>
 </resources>
