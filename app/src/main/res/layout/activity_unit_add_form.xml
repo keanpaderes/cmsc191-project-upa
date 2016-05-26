@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/codename_textView"
+            android:hint="@string/form_unit_codename"
+            android:layout_weight="0.03" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/codename_editText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/tenants_textView"
+            android:layout_weight="0.03"
+            android:hint="@string/form_unit_tenants" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tenants_editText"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.03" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/waterbill_textView"
+            android:layout_weight="0.03"
+            android:hint="@string/form_unit_waterbill" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/waterbill_editText"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.03"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/electricbill_textView"
+            android:layout_weight="0.03"
+            android:hint="@string/form_unit_electricbill" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/electricbill_editText"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.03"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/rent_textView"
+            android:layout_weight="0.03"
+            android:hint="@string/form_unit_rent" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rent_editText"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.03"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/addUnitSubmitbutton"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.03"
+            android:hint="@string/form_unit_submit" />
+    </LinearLayout>
+
+</RelativeLayout>
