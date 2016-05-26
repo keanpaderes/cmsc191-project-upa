@@ -24,11 +24,17 @@
     <string name="string_rent">Rent</string>
     <string name="string_electricity">Electricity</string>
     <string name="string_water">Water</string>
-    <string name="string_home">Home</string>
-    <string name="string_payable">Payable</string>
     <string name="title_option">Option</string>
-    <string name="string_profile">PROFILE</string>
     <string name="user_fullname">Full Name</string>
-    <string name="bday_label">Birthday</string>
-    <string name="contactNum_label">Contact Number</string>
+    <string name="addr_label">Address</string>
+    <string name="string_done">Done</string>
+    <!-- Navbar Buttons-->
+    <string name="string_home">HOME</string>
+    <string name="string_profile">PROFILE</string>
+    <string name="string_payable">PAYABLE</string>
+
+    <!-- Main Activity -->
+    <string name="project_title">PROJECT UPA</string>
+    <string name="project_type">Landowner Management Tool</string>
+    <string name="project_description">An Android application that lists all due bills and the total fee to be paid. It makes tracking of payments easier and convenient.</string>
 </resources>
