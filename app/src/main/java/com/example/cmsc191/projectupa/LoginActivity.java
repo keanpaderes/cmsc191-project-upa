@@ -3,6 +3,9 @@ package com.example.cmsc191.projectupa;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,24 +22,30 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
 
         session = new SessionManager(getApplicationContext());
         loginAdapter = new UserDatabaseAdapter(this);
         loginAdapter = loginAdapter.open();
 
-        logUsername = (EditText) findViewById(R.id.register_username_edittext);
-        logPassword = (EditText) findViewById(R.id.register_password_edittext);
+        logUsername = (EditText) findViewById(R.id.login_username_edittext);
+        logPassword = (EditText) findViewById(R.id.login_password_edittext);
 
-        registerLink = (TextView) this.findViewById(R.id.link_register_textview);
-        registerLink.setOnClickListener(new View.OnClickListener() {
+        registerLink = (TextView) findViewById(R.id.link_register_textview);
+        registerLink.setMovementMethod(LinkMovementMethod.getInstance());
+        Spannable spans = (Spannable) registerLink.getText();
+        ClickableSpan clickSpan = new ClickableSpan() {
             public void onClick(View v){
                 Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
-        });
+        };
+        spans.setSpan(clickSpan, 0, spans.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-        btnLogin = (Button) findViewById(R.id.btn_register);
+
+        btnLogin = (Button) findViewById(R.id.btn_login);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +72,8 @@ public class LoginActivity extends AppCompatActivity {
 
                         // Staring MainActivity
                         Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(i);
                         finish();
                     }

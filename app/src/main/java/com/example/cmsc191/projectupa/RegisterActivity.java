@@ -3,6 +3,9 @@ package com.example.cmsc191.projectupa;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,12 +34,17 @@ public class RegisterActivity extends AppCompatActivity {
         regAddress = (EditText) findViewById(R.id.register_address_edittext);
 
         loginLink = (TextView) this.findViewById(R.id.link_login_textview);
-        loginLink.setOnClickListener(new View.OnClickListener() {
+        loginLink.setMovementMethod(LinkMovementMethod.getInstance());
+        Spannable spans = (Spannable) loginLink.getText();
+        ClickableSpan clickSpan = new ClickableSpan() {
             public void onClick(View v){
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
-        });
+        };
+        spans.setSpan(clickSpan, 0, spans.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         btnRegister = (Button) findViewById(R.id.btn_register);
         btnRegister.setOnClickListener(new View.OnClickListener() {

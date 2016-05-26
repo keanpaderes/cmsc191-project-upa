@@ -42,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
         };
 
         // get user data from session
-        HashMap<String, String> user = session.getUserDetails();
-
-        // name
-        String name = user.get(SessionManager.KEY_NAME);
-
-        // displaying user data
-        lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
+//        HashMap<String, String> user = session.getUserDetails();
+//
+//        // name
+//        String name = user.get(SessionManager.KEY_NAME);
+//
+//        // displaying user data
+//        lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
 
         /**
          * Logout button click event
