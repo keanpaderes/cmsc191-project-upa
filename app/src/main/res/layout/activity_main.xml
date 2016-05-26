@@ -12,5 +12,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/test_username_label" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/test_password_label"
+        android:layout_below="@+id/test_username_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"
+        android:id="@+id/btn_logout"
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/test_username_label"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
