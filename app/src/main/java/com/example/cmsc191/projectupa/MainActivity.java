@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         session = new SessionManager(getApplicationContext());
-        TextView lblName = (TextView) findViewById(R.id.test_username_label);
-        TextView lblEmail = (TextView) findViewById(R.id.test_password_label);
 
         // Button logout
         btnLogout = (Button) findViewById(R.id.btn_logout);
@@ -83,5 +82,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
         System.exit(0);
+    }
+
+
+    public void profileClick(View view){
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    public void payableClick(View view){
+        Intent intent = new Intent(this, UnitListActivity.class);
+        startActivity(intent);
     }
 }
