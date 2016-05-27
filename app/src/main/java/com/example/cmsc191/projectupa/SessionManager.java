@@ -65,4 +65,12 @@ public class SessionManager {
     public String getCurrentUser(){
         return name;
     }
+
+    public void updateCurrentUser(String username){
+        String prefString = pref.getString(KEY_NAME, null);
+        this.name = username;
+        user.remove(KEY_NAME);
+        editor.putString(KEY_NAME, username);
+        user.put(KEY_NAME, prefString);
+    }
 }
