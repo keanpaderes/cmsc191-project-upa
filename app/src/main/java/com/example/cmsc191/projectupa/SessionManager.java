@@ -37,7 +37,7 @@ public class SessionManager {
      * Get stored session data
      * */
     public HashMap<String, String> getUserDetails(){
-        user.put(KEY_NAME, pref.getString(KEY_NAME, null));
+        this.user.put(KEY_NAME, pref.getString(KEY_NAME, null));
         return user;
     }
 

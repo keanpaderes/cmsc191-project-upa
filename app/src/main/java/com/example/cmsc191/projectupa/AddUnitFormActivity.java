@@ -63,7 +63,10 @@ public class AddUnitFormActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "There are incomplete fields!", Toast.LENGTH_LONG).show();
                 }else{
                     addUnitFormAdapter.insertUnitEntry(session.getCurrentUser(), codename, waterBill, electricBill, rent, tenants);
-                    setContentView(R.layout.activity_unit_list);
+                    Intent intent = new Intent(getApplicationContext(), UnitListActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 }
             }
         });

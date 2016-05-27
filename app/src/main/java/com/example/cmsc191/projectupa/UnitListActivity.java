@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -20,6 +22,7 @@ public class UnitListActivity extends AppCompatActivity{
     ArrayList<String> unitItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
     SessionManager session;
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -36,6 +39,17 @@ public class UnitListActivity extends AppCompatActivity{
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, unitItems);
         listview.setAdapter(adapter);
 
+        AdapterView.OnItemClickListener itemClickListener =
+                new AdapterView.OnItemClickListener(){
+                  public void onItemClick(AdapterView<?> listView, View v, int position, long id){
+                      Intent i = new Intent(getApplicationContext(), PayableActivity.class);
+                      i.putExtra(PayableActivity.EXTRA_POSITION, position);
+                      startActivity(i);
+                  }
+                };
+
+        listview.setOnItemClickListener(itemClickListener);
+
         btnAddUnit = (Button) findViewById(R.id.add_unit_button);
         btnAddUnit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,4 +62,9 @@ public class UnitListActivity extends AppCompatActivity{
             }
         });
     }
+
+    /*public void onListItemClick(ListView listview, View itemView, int position, long id) {
+        Intent intent = new Intent(getApplicationContext(), PayableActivity.class);
+        startActivity(intent);
+    }*/
 }

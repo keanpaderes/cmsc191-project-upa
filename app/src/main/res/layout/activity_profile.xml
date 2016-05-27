@@ -158,21 +158,8 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="H"
-            android:id="@+id/button"
-            android:layout_weight="1"
-            android:minHeight="0dp"
-            android:minWidth="0dp"
-            android:layout_marginLeft="-5dip"
-            android:layout_marginRight="-5dip"
-            android:layout_marginTop="-5dip"
-            android:layout_marginBottom="-5dip"/>
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:text="PRO"
-            android:id="@+id/button2"
+            android:text="@string/string_home"
+            android:id="@+id/btnHomeProf"
             android:layout_weight="1"
             android:minHeight="0dp"
             android:minWidth="0dp"
@@ -180,12 +167,29 @@
             android:layout_marginRight="-5dip"
             android:layout_marginTop="-5dip"
             android:layout_marginBottom="-5dip"
-            android:backgroundTint="@color/abc_secondary_text_material_light" />
+            android:clickable="true"
+            android:onClick="homeClick" />
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="PAY"
+            android:text="@string/string_profile"
+            android:id="@+id/btnPayProf"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:layout_marginLeft="-5dip"
+            android:layout_marginRight="-5dip"
+            android:layout_marginTop="-5dip"
+            android:layout_marginBottom="-5dip"
+            android:backgroundTint="@color/abc_secondary_text_material_light"
+            android:clickable="false"
+            android:textColor="@color/material_grey_50" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/string_payable"
             android:id="@+id/button3"
             android:layout_weight="1"
             android:minHeight="0dp"
@@ -193,7 +197,9 @@
             android:layout_marginLeft="-5dip"
             android:layout_marginRight="-5dip"
             android:layout_marginTop="-5dip"
-            android:layout_marginBottom="-5dip"/>
+            android:layout_marginBottom="-5dip"
+            android:clickable="true"
+            android:onClick="payableClick" />
 
     </LinearLayout>
 </LinearLayout>

@@ -18,6 +18,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText regFullname, regUsername, regPassword,
             regConfirmPassword, regAddress;
     Button btnRegister;
+    SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),
                             "Account successfully created!",
                             Toast.LENGTH_LONG).show();
+                    session.createLoginSession(username);
                     setContentView(R.layout.activity_main);
                 }
             }

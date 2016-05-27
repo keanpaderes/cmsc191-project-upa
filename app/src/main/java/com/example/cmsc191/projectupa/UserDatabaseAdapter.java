@@ -77,10 +77,8 @@ public class UserDatabaseAdapter {
     }
 
     public int deleteEntry(String username) {
-        //String id=String.valueOf(ID);
         String where = "USERNAME=?";
         int numberOFEntriesDeleted= db.delete("LOGIN", where, new String[]{username}) ;
-        // Toast.makeText(context, "Number fo Entry Deleted Successfully : "+numberOFEntriesDeleted, Toast.LENGTH_LONG).show();
         return numberOFEntriesDeleted;
     }
     public String getSingleEntry(String username) {
@@ -100,6 +98,31 @@ public class UserDatabaseAdapter {
         return password;
     }
 
+    public ArrayList<String> getUnitDetails(int position){
+        ArrayList<String> unitDetails = new ArrayList<String>();
+        String codename, water_bill, electric_bill, rent, tenant;
+        Cursor cursor = db.query(
+                "UNIT",
+                new String[]{"CODENAME", "WATER_BILL", "ELECTRIC_BILL", "RENT", "TENANT"},
+                "ID = " + position,
+                null, null, null, null);
+        if(cursor.getCount()>0){
+            cursor.moveToFirst();
+            codename = cursor.getString(cursor.getColumnIndex("CODENAME"));
+            water_bill = cursor.getString(cursor.getColumnIndex("WATER_BILL"));
+            electric_bill = cursor.getString(cursor.getColumnIndex("ELECTRIC_BILL"));
+            rent = cursor.getString(cursor.getColumnIndex("RENT"));
+            tenant = cursor.getString(cursor.getColumnIndex("TENANT"));
+            unitDetails.add(codename);
+            unitDetails.add(water_bill);
+            unitDetails.add(electric_bill);
+            unitDetails.add(rent);
+            unitDetails.add(tenant);
+        }
+        cursor.close();
+        return unitDetails;
+    }
+
     public ArrayList<String> selectAll(){
         ArrayList<String> unitNames = new ArrayList<String>();
         String unit;
@@ -111,7 +134,6 @@ public class UserDatabaseAdapter {
             cursor.moveToFirst();
             for(int i=0; i<cursor.getCount(); i++) {
                 unit = cursor.getString(cursor.getColumnIndex("CODENAME"));
-                //Toast.makeText(context, unit, Toast.LENGTH_LONG).show();
                 unitNames.add(unit);
                 cursor.moveToNext();
             }
