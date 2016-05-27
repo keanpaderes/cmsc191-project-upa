@@ -78,6 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),
                             "Account successfully created!",
                             Toast.LENGTH_LONG).show();
+                    setContentView(R.layout.activity_main);
                 }
             }
         });

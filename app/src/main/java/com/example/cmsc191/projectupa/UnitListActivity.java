@@ -1,6 +1,5 @@
 package com.example.cmsc191.projectupa;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,6 +19,7 @@ public class UnitListActivity extends AppCompatActivity{
     Button btnAddUnit;
     ArrayList<String> unitItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
+    SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -27,6 +28,7 @@ public class UnitListActivity extends AppCompatActivity{
 
         unitListAdapter = new UserDatabaseAdapter(this);
         unitListAdapter = unitListAdapter.open();
+        //unitItems = unitListAdapter.selectAll(session.getCurrentUser());
         unitItems = unitListAdapter.selectAll();
 
         ListView listview = (ListView) findViewById(R.id.units_listView);

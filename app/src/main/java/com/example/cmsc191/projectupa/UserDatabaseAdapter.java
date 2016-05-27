@@ -73,7 +73,7 @@ public class UserDatabaseAdapter {
         newValues.put("RENT", rent);
         newValues.put("TENANT", tenant);
         db.insert("UNIT", null, newValues);
-        Toast.makeText(context, "Unit " + codename + " successfully added!", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, codename + " successfully added!", Toast.LENGTH_LONG).show();
     }
 
     public int deleteEntry(String username) {
@@ -104,13 +104,14 @@ public class UserDatabaseAdapter {
         ArrayList<String> unitNames = new ArrayList<String>();
         String unit;
         Cursor cursor = db.query("UNIT",
-                null,
-                "CODENAME=?",
+                new String[] {"CODENAME"},
+                //"USERNAME = " + username,
                 null, null, null, null, null);
         if(cursor.getCount()>0){
             cursor.moveToFirst();
             for(int i=0; i<cursor.getCount(); i++) {
                 unit = cursor.getString(cursor.getColumnIndex("CODENAME"));
+                //Toast.makeText(context, unit, Toast.LENGTH_LONG).show();
                 unitNames.add(unit);
                 cursor.moveToNext();
             }

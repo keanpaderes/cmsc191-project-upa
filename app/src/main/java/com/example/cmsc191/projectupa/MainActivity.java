@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         // Button logout
         btnLogout = (Button) findViewById(R.id.btn_logout);
 
-        Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
 
 
         /**
@@ -41,10 +41,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else{
-            Intent intent = new Intent(getApplicationContext(), UnitListActivity.class);
+            /*Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
+            startActivity(intent);*/
+            setContentView(R.layout.activity_main);
         }
 
         // get user data from session
