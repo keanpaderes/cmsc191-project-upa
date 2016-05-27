@@ -28,6 +28,7 @@
     <string name="user_fullname">Full Name</string>
     <string name="addr_label">Address</string>
     <string name="string_done">Done</string>
+    <string name="string_addUnit">ADD UNIT</string>
     <!-- Navbar Buttons-->
     <string name="string_home">HOME</string>
     <string name="string_profile">PROFILE</string>

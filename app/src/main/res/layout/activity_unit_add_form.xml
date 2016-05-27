@@ -4,96 +4,149 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/string_addUnit"
+        android:id="@+id/textView10"
+        android:textSize="34sp"
+        android:paddingTop="19dp"
+        android:paddingRight="175dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_unit_codename"
+        android:id="@+id/codename_textView"
+        android:layout_below="@+id/textView10"
+        android:layout_alignLeft="@+id/textView10"
+        android:layout_alignStart="@+id/textView10"
+        android:layout_marginTop="23dp" />
+
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1">
+        android:layout_height="wrap_content"
+        android:id="@+id/codename_editText"
+        android:layout_below="@+id/codename_textView"
+        android:layout_alignLeft="@+id/codename_textView"
+        android:layout_alignStart="@+id/codename_textView"
+        android:layout_alignRight="@+id/textView10"
+        android:layout_alignEnd="@+id/textView10" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/codename_textView"
-            android:hint="@string/form_unit_codename"
-            android:layout_weight="0.03" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_unit_tenants"
+        android:id="@+id/tenants_textView"
+        android:layout_weight="0.03"
+        android:layout_below="@+id/codename_editText"
+        android:layout_alignLeft="@+id/codename_editText"
+        android:layout_alignStart="@+id/codename_editText" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/codename_editText" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tenants_editText"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03"
+        android:layout_below="@+id/tenants_textView"
+        android:layout_alignLeft="@+id/tenants_textView"
+        android:layout_alignStart="@+id/tenants_textView"
+        android:layout_alignRight="@+id/textView10"
+        android:layout_alignEnd="@+id/textView10" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/tenants_textView"
-            android:layout_weight="0.03"
-            android:hint="@string/form_unit_tenants" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_unit_waterbill"
+        android:id="@+id/waterbill_textView"
+        android:layout_weight="0.03"
+        android:layout_above="@+id/electricbill_editText"
+        android:layout_toLeftOf="@+id/waterbill_editText"
+        android:layout_toStartOf="@+id/waterbill_editText"
+        android:translationY="-10dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tenants_editText"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.03" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/waterbill_editText"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03"
+        android:inputType="numberDecimal"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/addUnitSubmitbutton"
+        android:layout_alignStart="@+id/addUnitSubmitbutton"
+        android:minWidth="150dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/waterbill_textView"
-            android:layout_weight="0.03"
-            android:hint="@string/form_unit_waterbill" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_unit_electricbill"
+        android:id="@+id/electricbill_textView"
+        android:layout_weight="0.03"
+        android:translationY="-10dp"
+        android:layout_alignBottom="@+id/electricbill_editText"
+        android:layout_toLeftOf="@+id/electricbill_editText"
+        android:layout_toStartOf="@+id/electricbill_editText" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/waterbill_editText"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.03"
-            android:inputType="numberDecimal" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/electricbill_editText"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03"
+        android:inputType="numberDecimal"
+        android:minWidth="100dp"
+        android:layout_below="@+id/waterbill_editText"
+        android:layout_alignRight="@+id/waterbill_editText"
+        android:layout_alignEnd="@+id/waterbill_editText"
+        android:layout_alignLeft="@+id/waterbill_editText"
+        android:layout_alignStart="@+id/waterbill_editText" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/electricbill_textView"
-            android:layout_weight="0.03"
-            android:hint="@string/form_unit_electricbill" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_unit_rent"
+        android:id="@+id/rent_textView"
+        android:layout_weight="0.03"
+        android:translationY="-10dp"
+        android:layout_alignBottom="@+id/rent_editText"
+        android:layout_toLeftOf="@+id/rent_editText"
+        android:layout_toStartOf="@+id/rent_editText" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/electricbill_editText"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.03"
-            android:inputType="numberDecimal" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rent_editText"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03"
+        android:inputType="numberDecimal"
+        android:minWidth="100dp"
+        android:layout_below="@+id/waterbill_editText"
+        android:layout_alignRight="@+id/waterbill_editText"
+        android:layout_alignEnd="@+id/waterbill_editText"
+        android:layout_marginTop="40dp"
+        android:layout_alignLeft="@+id/electricbill_editText"
+        android:layout_alignStart="@+id/electricbill_editText" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/rent_textView"
-            android:layout_weight="0.03"
-            android:hint="@string/form_unit_rent" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rent_editText"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.03"
-            android:inputType="numberDecimal" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/addUnitSubmitbutton"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.03"
-            android:hint="@string/form_unit_submit" />
-    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_unit_submit"
+        android:id="@+id/addUnitSubmitbutton"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="51dp" />
 
 </RelativeLayout>

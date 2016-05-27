@@ -24,7 +24,9 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:textSize="34sp"
-            android:paddingTop="19dp" />
+            android:paddingTop="19dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -33,10 +35,10 @@
             android:text="@string/user_fullname"
             android:textSize="15sp"
             android:layout_below="@+id/textView3"
-            android:layout_alignRight="@+id/textView3"
-            android:layout_alignEnd="@+id/textView3"
             android:layout_toRightOf="@+id/textView4"
-            android:layout_toEndOf="@+id/textView4" />
+            android:layout_marginTop="35dp"
+            android:layout_alignRight="@+id/textView3"
+            android:layout_alignEnd="@+id/textView3" />
 
         <TextView
             android:layout_width="wrap_content"
