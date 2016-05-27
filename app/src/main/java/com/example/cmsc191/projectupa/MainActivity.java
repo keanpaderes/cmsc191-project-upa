@@ -3,14 +3,9 @@ package com.example.cmsc191.projectupa;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     SessionManager session;
@@ -69,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
                 session.logoutUser();
             }
         });
+
+
     }
 
     //onBackPressed
@@ -84,8 +81,7 @@ public class MainActivity extends AppCompatActivity {
         System.exit(0);
     }
 
-
-    public void profileClick(View view){
+    public void profileClick(View view ){
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }

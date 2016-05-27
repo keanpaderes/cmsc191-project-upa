@@ -26,8 +26,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_toStartOf="@+id/button"
-                android:layout_toLeftOf="@+id/button"
+                android:layout_toStartOf="@+id/btnHomeProf"
+                android:layout_toLeftOf="@+id/btnHomeProf"
                 android:layout_weight="1" />
 
             <Button
