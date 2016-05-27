@@ -75,12 +75,16 @@ public class RegisterActivity extends AppCompatActivity {
                             "Username already exists!",
                             Toast.LENGTH_LONG).show();
                 } else {
-                    registrationAdapter.insertEntry(fullname,username,password,address);
+                    registrationAdapter.insertEntry(fullname, username, password, address);
                     Toast.makeText(getApplicationContext(),
                             "Account successfully created!",
                             Toast.LENGTH_LONG).show();
-                    session.createLoginSession(username);
-                    setContentView(R.layout.activity_main);
+                    //session.createLoginSession(username);
+                    //setContentView(R.layout.activity_main);
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(i);
                 }
             }
         });

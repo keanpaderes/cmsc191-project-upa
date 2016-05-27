@@ -7,20 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.50">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="&lt; BACK"
-            android:id="@+id/back_textview"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="16dp" />
+        android:layout_weight="1.41">
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,38 +15,39 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="UNIT 1 Occupants:"
             android:id="@+id/list_unit"
-            android:layout_below="@+id/back_textview"
-            android:layout_alignLeft="@+id/occupant_name1_textview"
-            android:layout_alignStart="@+id/occupant_name1_textview"
-            android:layout_marginTop="22dp" />
+            android:layout_marginTop="46dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/tenants_textview"
+            android:layout_alignStart="@+id/tenants_textview" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tenants"
             android:id="@+id/occupant_name1_textview"
+            android:layout_marginTop="30dp"
             android:layout_below="@+id/list_unit"
-            android:layout_alignLeft="@+id/tenants_textview"
-            android:layout_alignStart="@+id/tenants_textview"
-            android:layout_marginTop="24dp" />
+            android:layout_alignLeft="@+id/list_unit"
+            android:layout_alignStart="@+id/list_unit" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Names"
             android:id="@+id/tenants_textview"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
             android:layout_below="@+id/occupant_name1_textview"
-            android:layout_alignRight="@+id/back_textview"
-            android:layout_alignEnd="@+id/back_textview" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/string_rent"
             android:id="@+id/payable_rent_textview"
-            android:layout_marginTop="42dp"
-            android:layout_below="@+id/tenants_textview"
+            android:layout_centerVertical="true"
             android:layout_alignLeft="@+id/tenants_textview"
             android:layout_alignStart="@+id/tenants_textview" />
 
@@ -68,10 +56,10 @@
             android:layout_height="wrap_content"
             android:text="@string/string_electricity"
             android:id="@+id/payable_electricity_textview"
+            android:layout_marginTop="34dp"
             android:layout_below="@+id/payable_rent_textview"
             android:layout_alignLeft="@+id/payable_rent_textview"
-            android:layout_alignStart="@+id/payable_rent_textview"
-            android:layout_marginTop="16dp" />
+            android:layout_alignStart="@+id/payable_rent_textview" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -87,10 +75,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/amount_rent_textview"
+            android:text="rent amount"
             android:layout_alignTop="@+id/payable_rent_textview"
-            android:layout_toRightOf="@+id/list_unit"
-            android:layout_toEndOf="@+id/list_unit"
-            android:text="rent amount" />
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -178,7 +165,7 @@
             android:layout_marginTop="-5dip"
             android:layout_marginBottom="-5dip"
             android:backgroundTint="@color/abc_secondary_text_material_light"
-            android:textColor="@color/abc_background_cache_hint_selector_material_light" />
+            android:textColor="#ffffff" />
     </LinearLayout>
 
 </LinearLayout>

@@ -67,4 +67,14 @@ public class UnitListActivity extends AppCompatActivity{
         Intent intent = new Intent(getApplicationContext(), PayableActivity.class);
         startActivity(intent);
     }*/
+
+    public void profileClick(View view ){
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    public void homeClick(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
