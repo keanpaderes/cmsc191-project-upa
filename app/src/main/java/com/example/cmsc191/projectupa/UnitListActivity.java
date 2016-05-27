@@ -1,10 +1,15 @@
 package com.example.cmsc191.projectupa;
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * Created by Crissa on 5/26/2016.
@@ -12,11 +17,22 @@ import android.widget.Button;
 public class UnitListActivity extends AppCompatActivity{
     UserDatabaseAdapter unitListAdapter;
     Button btnAddUnit;
+    ArrayList<String> unitItems = new ArrayList<String>();
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unit_list);
+
+        unitListAdapter = new UserDatabaseAdapter(this);
+        unitListAdapter = unitListAdapter.open();
+        unitItems = unitListAdapter.selectAll();
+
+        ListView listview = (ListView) findViewById(R.id.units_listView);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, unitItems);
+        listview.setAdapter(adapter);
 
         btnAddUnit = (Button) findViewById(R.id.add_unit_button);
         btnAddUnit.setOnClickListener(new View.OnClickListener() {

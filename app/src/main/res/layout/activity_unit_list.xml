@@ -12,4 +12,10 @@
         android:clickable="true"
         android:enabled="true"
         android:hint="@string/button_add_unit" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/units_listView"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

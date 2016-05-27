@@ -62,7 +62,6 @@ public class AddUnitFormActivity extends AppCompatActivity {
                 if(codename.equals("") || tenants.equals("")){
                     Toast.makeText(getApplicationContext(), "There are incomplete fields!", Toast.LENGTH_LONG).show();
                 }else{
-                    //Toast.makeText(getApplicationContext(), session.getCurrentUser(), Toast.LENGTH_LONG).show();
                     addUnitFormAdapter.insertUnitEntry(session.getCurrentUser(), codename, waterBill, electricBill, rent, tenants);
                 }
             }

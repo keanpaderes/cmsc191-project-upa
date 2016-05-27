@@ -7,6 +7,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Created by Kean on 5/25/2016.
  */
@@ -97,6 +99,26 @@ public class UserDatabaseAdapter {
         cursor.close();
         return password;
     }
+
+    public ArrayList<String> selectAll(){
+        ArrayList<String> unitNames = new ArrayList<String>();
+        String unit;
+        Cursor cursor = db.query("UNIT",
+                null,
+                "CODENAME=?",
+                null, null, null, null, null);
+        if(cursor.getCount()>0){
+            cursor.moveToFirst();
+            for(int i=0; i<cursor.getCount(); i++) {
+                unit = cursor.getString(cursor.getColumnIndex("CODENAME"));
+                unitNames.add(unit);
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }
+        return unitNames;
+    }
+
     public void  updateEntry(String username,String password) {
         // Define the updated row content.
         ContentValues updatedValues = new ContentValues();
