@@ -14,7 +14,7 @@ public class PayableActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "positionNo";
     UserDatabaseAdapter payableAdapter;
     ArrayList<String> unitDetails = new ArrayList<String>();
-    TextView unitName, tenants, rent, ebill, wbill;
+    TextView unitName, tenants, rent, ebill, wbill, totalBill;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,10 @@ public class PayableActivity extends AppCompatActivity {
 
         wbill = (TextView) findViewById(R.id.amount_water_textview);
         wbill.setText(unitDetails.get(1));
+
+        Float total = Float.parseFloat(rent.getText().toString()) + Float.parseFloat(ebill.getText().toString()) + Float.parseFloat(wbill.getText().toString());
+        totalBill = (TextView) findViewById(R.id.amount_total_textview);
+        totalBill.setText(total.toString());
 
     }
 
