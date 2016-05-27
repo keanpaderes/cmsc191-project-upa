@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else{
-            Intent intent = new Intent(getApplicationContext(), UnitListActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
+//            Intent intent = new Intent(getApplicationContext(), UnitListActivity.class);
+//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(intent);
         }
 
         // get user data from session

@@ -39,7 +39,7 @@ public class UserDatabaseAdapter {
         context = _context;
         dbHelper = new DatabaseHelper(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-    public  UserDatabaseAdapter open() throws SQLException {
+    public UserDatabaseAdapter open() throws SQLException {
         db = dbHelper.getWritableDatabase();
         return this;
     }
@@ -47,7 +47,7 @@ public class UserDatabaseAdapter {
         db.close();
     }
 
-    public  SQLiteDatabase getDatabaseInstance() {
+    public SQLiteDatabase getDatabaseInstance() {
         return db;
     }
 
@@ -97,14 +97,33 @@ public class UserDatabaseAdapter {
         cursor.close();
         return password;
     }
-    public void  updateEntry(String username,String password) {
+
+    public String[] getUserEntries(String username){
+        String entries[] = new String[4];
+        Cursor cursor = db.query(
+                "LOGIN",
+                new String[] {"FULLNAME","USERNAME","PASSWORD","ADDRESS"},
+                "USERNAME=?",
+                new String[]{username}, null, null, null);
+        cursor.moveToFirst();
+        entries[0] = cursor.getString(cursor.getColumnIndex("FULLNAME"));
+        entries[1] = cursor.getString(cursor.getColumnIndex("ADDRESS"));
+        entries[2] = cursor.getString(cursor.getColumnIndex("USERNAME"));
+        entries[3] = cursor.getString(cursor.getColumnIndex("PASSWORD"));
+        cursor.close();
+        return entries;
+    }
+
+    public void  updateEntry(String user, String username,String password, String addr, String fullname) {
         // Define the updated row content.
         ContentValues updatedValues = new ContentValues();
         // Assign values for each row.
         updatedValues.put("USERNAME", username);
         updatedValues.put("PASSWORD",password);
+        updatedValues.put("ADDRESS",addr);
+        updatedValues.put("FULLNAME",fullname);
 
         String where = "USERNAME = ?";
-        db.update("LOGIN",updatedValues, where, new String[]{username});
+        db.update("LOGIN",updatedValues, where, new String[]{user});
     }
 }
